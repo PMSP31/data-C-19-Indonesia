@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Covid-19</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="nav grid grid-cols-3 items-center p-5 bg-gray-200 text-black">
+      <div class="logo">
+        <h1
+          class="
+            text-2xl
+            hover:text-blue-500
+            cursor-pointer
+            transition-all
+            duration-300
+          "
+        >
+          <i class="fas fa-stethoscope text-2xl"></i> | Data C-19 Indonesia
+        </h1>
+      </div>
+      <div class="nav-item col-start-3">
+        <ul class="flex justify-evenly">
+          <li
+            class="
+              hover:text-blue-500
+              cursor-pointer
+              transition-all
+              duration-300
+            "
+          >
+            <i class="fas fa-home"></i> Home
+          </li>
+          <li
+            class="
+              hover:text-blue-500
+              cursor-pointer
+              transition-all
+              duration-300
+            "
+          >
+            <i class="fas fa-question-circle"></i> About
+          </li>
+          <li
+            class="
+              hover:text-blue-500
+              cursor-pointer
+              transition-all
+              duration-300
+            "
+          >
+            <i class="fas fa-phone-alt"></i> Hotline
+          </li>
+        </ul>
+      </div>
+
+      <!-- Hamburger icon -->
+      <div class="menu-toggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <!-- navbar end -->
+
+    <div class="container mx-auto my-auto text-center">
+      <!-- header -->
+      <div class="header mt-16 mb-8">
+        <h1 class="text-2xl">Data Covid-19 di Indonesia</h1>
+        <h3 class="text-xl">
+          Sumber informasi inisiatif sukarela warganet Indonesia pro-data
+        </h3>
+      </div>
+      <!-- header end -->
+      <hr />
+      <!-- Data Covid-19 Indonesia -->
+      <div class="data mt-10"></div>
+      <!-- Data Covid-19 Indonesia End -->
+
+      <!-- Data Covid tiap Provinsi -->
+      <div class="table-responsive grid items-center">
+        <h1 class="text-2xl mt-10">
+          Data Covid-19 berdasarkan Provinsi di Indonesia
+        </h1>
+        <hr class="mb-5 mt-3" />
+        <table class="table-auto border shadow-xl">
+          <thead>
+            <tr class="border-collapse bg-gray-500 text-white">
+              <th class="border px-10 py-5">No</th>
+              <th class="border px-10 py-5">Provinsi</th>
+              <th class="border px-10 py-5">Positif</th>
+              <th class="border px-10 py-5">Sembuh</th>
+              <th class="border px-10 py-5">Meninggal</th>
+            </tr>
+          </thead>
+          <tbody class="table-provinsi border"></tbody>
+        </table>
+      </div>
+      <!-- Data Covid tiap Indonesia End -->
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
