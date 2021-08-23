@@ -48,6 +48,18 @@
   }
 }
 
+.link-item{
+  ul{
+    li{
+      i:hover{
+        color: white;
+        transition: all .3s ease;
+        transform: translateY(-5px);
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 576px) {
   .nav {
     .logo {

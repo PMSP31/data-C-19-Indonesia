@@ -66,6 +66,14 @@
           transform: scale(0);
 }
 
+.link-item ul li i:hover {
+  color: white;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
 @media screen and (max-width: 576px) {
   .nav .logo {
     -ms-grid-column: 1;
