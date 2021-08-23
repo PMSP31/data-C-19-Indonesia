@@ -1,10 +1,3 @@
-const menuToggle = document.querySelector(".menu-toggle input");
-const nav = document.querySelector("nav .nav-item ul");
-
-menuToggle.addEventListener("click", function () {
-  nav.classList.toggle("slide");
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   getDataInd();
   getDataProv();
@@ -36,7 +29,7 @@ function numberWithCommas(x) {
 }
 
 function dataIndo(res) {
-  return `<ul class="grid grid-cols-4 gap-5 text-white">
+  return `<ul class="grid grid-rows-5 px-5 lg:grid-cols-4 grid-rows-none gap-5 text-white">
             <li class="confirm bg-gray-200 p-5 rounded-md text-left shadow-2xl bg-gray-700">
             <p class="text-md"> Terkonfirmasi Positif : <br /> <span><strong>${numberWithCommas(
               res.confirmed.value
@@ -66,7 +59,7 @@ function dataProv(res) {
     .map((item, index) => {
       if (item.kodeProvi !== 0) {
         return `<tr>
-                  <td class="border py-2">${index + 1}</td>
+                  <td class="border hidden md:block py-2">${index + 1}</td>
                   <td class="border">${item.provinsi}</td>
                   <td class="border">${numberWithCommas(item.kasusPosi)}</td>
                   <td class="border">${numberWithCommas(item.kasusSemb)}</td>
