@@ -3,6 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
   getDataProv();
 });
 
+const btn = document.querySelector('button.mobile-menu-button');
+const menu = document.querySelector('.mobile-menu');
+
+btn.addEventListener('click',function(){
+    menu.classList.toggle('hidden');
+})
+
 function getDataInd() {
   return fetch("https://covid19.mathdro.id/api/countries/indonesia")
     .then((res) => res.json())
@@ -11,7 +18,8 @@ function getDataInd() {
       data.innerHTML = await dataIndo(res);
     })
     .catch((e) => {
-      document.body.innerHTML = `<h1>${e.responseText}</h1>`;
+      const data = document.querySelector(".data");
+      data.innerHTML = `<h1>${e.responseText}</h1>`;
     });
 }
 
@@ -21,6 +29,10 @@ function getDataProv() {
     .then(async (res) => {
       const tbody = document.querySelector("tbody");
       tbody.innerHTML = await dataProv(res);
+    })
+    .catch((e) => {
+      const tbody = document.querySelector("tbody");
+      tbody.innerHTML = `<h1>${e.responseText}</h1>`;
     });
 }
 

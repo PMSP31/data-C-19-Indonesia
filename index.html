@@ -20,48 +20,110 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="nav grid grid-cols-2 w-full lg:grid-cols-3 items-center p-5 bg-gray-200 text-black">
-        <h1
+    <nav class="bg-white shadow-lg py-4 md:py-6 w-screen">
+      <div class="grid grid-cols-3 items-center px-4 md:px-8">
+        <!-- Website Logo -->
+        <div class="logo col-span-2 md:col-start-1 col-end-2">
+          <a href="#about" class="font-semibold"><i class="fas fa-stethoscope"></i> Data C-19 Indonesia</a>
+        </div>
+        <!-- Primary Nav-Item -->
+        <ul
           class="
-            text-md
-            col-span-full
-            md:col-start-1
-            col-end-3
-            lg:text-2xl
-            col-start-1
-            col-end-1
-            hover:text-blue-500
-            transition-all
-            duration-300
-            font-medium
+            hidden
+            nav-item
+            col-start-3 col-end-3
+            md:flex
+            items-center
+            justify-evenly
           "
         >
-          <i class="fas fa-stethoscope text-sm lg:text-2xl"></i> | DATA C-19 Indonesia
-        </h1>
-        <ul class="block sm:flex justify-evenly col-start-3 gap-2">
-          <li
-            class="hover:text-blue-500 transition-all duration-300 font-medium"
-          >
-            <i class="fas fa-home"></i> Home
+          <li class="active">
+            <a href="#home" class="text-blue-500 hover:text-blue-500"><i class="fas fa-home"></i> Home</a>
           </li>
-          <li
-            class="hover:text-blue-500 transition-all duration-300 font-medium"
-          >
-            <i class="fas fa-question-circle"></i> About
+          <li>
+            <a href="#about" class="hover:text-blue-500"><i class="fas fa-question-circle"></i> About</a>
           </li>
-          <li
-            class="hover:text-blue-500 transition-all duration-300 font-medium"
-          >
-            <i class="fas fa-phone-alt"></i> Hotline
+          <li>
+            <a href="#hotline" class="hover:text-blue-500"><i class="fas fa-phone-alt"></i> Hotline</a>
           </li>
         </ul>
+        <!-- mobile menu button -->
+        <div class="col-start-3 col-end-3 mt-2 mx-2 place-self-end md:hidden">
+          <button class="outline-none mobile-menu-button">
+            <svg
+              class="w-6 h-6 text-gray-500 hover:text-blue-500"
+              x-show="!showMenu"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu Item -->
+      <div class="hidden mobile-menu mt-4 opacity-100">
+        <ul>
+          <li class="active">
+            <a
+              href="index.html"
+              class="
+                block
+                text-sm
+                px-2
+                py-4
+                text-white
+                bg-blue-500
+                font-semibold
+              "
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="
+                block
+                text-sm
+                px-2
+                py-4
+                hover:bg-blue-500
+                transition
+                duration-300
+              "
+              ><i class="fas fa-question-circle"></i> About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#hotline"
+              class="
+                block
+                text-sm
+                px-2
+                py-4
+                hover:bg-blue-500
+                transition
+                duration-300
+              "
+              ><i class="fas fa-phone-alt"></i> Hotline</a
+            >
+          </li>
+        </ul>
+      </div>
     </nav>
     <!-- navbar end -->
 
     <div class="container mx-auto my-auto text-center">
       <!-- header -->
-      <div class="header mt-16 mb-8">
-        <h1 class="text-xl lg:text-2xl"><strong>Data Covid-19 di Indonesia</strong></h1>
+      <div class="header mt-16 mb-8 px-8">
+        <h1 class="text-xl lg:text-2xl">
+          <strong>Data Covid-19 di Indonesia</strong>
+        </h1>
         <h3 class="text-md lg:text-xl">
           Sumber informasi inisiatif sukarela warganet Indonesia pro-data.
         </h3>
@@ -73,12 +135,12 @@
       <!-- Data Covid-19 Indonesia End -->
 
       <!-- Data Covid tiap Provinsi -->
-      <div class="table-responsive container grid items-center">
+      <div class="table-responsive container grid items-center px-6 md:-px-6">
         <h1 class="text-xl lg:text-2xl mt-10">
           <strong>Data Covid-19 berdasarkan Provinsi di Indonesia.</strong>
         </h1>
         <hr class="mb-5 mt-3" />
-        <table class="table-auto border shadow-xl">
+        <table class="table-fixed border-2 shadow-lg">
           <thead>
             <tr class="border-collapse bg-gray-500 text-white">
               <th class="border hidden md:block p-5">No</th>
@@ -88,14 +150,16 @@
               <th class="border lg:px-10 py-5">Meninggal</th>
             </tr>
           </thead>
-          <tbody class="table-provinsi border"></tbody>
+          <tbody class="table-provinsi border text-left md:text-center"></tbody>
         </table>
       </div>
       <!-- Data Covid tiap Provinsi End -->
 
       <!-- Link Item -->
       <div class="link-item mt-16">
-        <ul class="grid grid-rows-2 grid-cols-2 leading-8 md:flex justify-evenly">
+        <ul
+          class="grid grid-rows-2 grid-cols-2 leading-8 md:flex justify-evenly"
+        >
           <li>
             <a href="https://covid19.go.id/daftar-rumah-sakit-rujukan"
               ><i
@@ -108,8 +172,7 @@
                   text-3xl
                   p-8
                   text-black
-                  hover:bg-blue-500
-                  hover:text-white
+                  hover:bg-blue-500 hover:text-white
                   transition-all
                 "
               ></i>
@@ -128,8 +191,7 @@
                   bg-gray-300
                   text-3xl
                   p-8
-                  hover:bg-blue-500
-                  hover:text-white
+                  hover:bg-blue-500 hover:text-white
                   transition-all
                 "
               ></i>
@@ -147,8 +209,7 @@
                   bg-gray-300
                   text-3xl
                   p-8
-                  hover:bg-blue-500
-                  hover:text-white
+                  hover:bg-blue-500 hover:text-white
                   transition-all
                 "
               ></i>
@@ -166,8 +227,7 @@
                   bg-gray-300
                   text-3xl
                   p-8
-                  hover:bg-blue-500
-                  hover:text-white
+                  hover:bg-blue-500 hover:text-white
                   transition-all
                 "
               ></i>
@@ -199,7 +259,17 @@
     </div>
 
     <!-- Main Footer -->
-    <footer class="bg-gray-200 mt-10 grid grid-rows-3 md:grid-cols-3 grid-rows-none text-left pb-10">
+    <footer
+      class="
+        bg-gray-200
+        mt-10
+        grid grid-rows-3
+        md:grid-cols-3
+        grid-rows-none
+        text-left
+        pb-10
+      "
+    >
       <div class="about-footer px-2 mt-10">
         <h1 class="font-medium text-xl px-6">DATA COVID-19</h1>
         <p class="mt-5 text-left px-6">
@@ -236,7 +306,9 @@
         <ul class="mt-5 leading-8 px-6">
           <li>
             <i class="fas fa-home"></i
-            ><a class="ml-4 hover:text-blue-500" href="#">Surakarta, Jawa Tengah</a>
+            ><a class="ml-4 hover:text-blue-500" href="#"
+              >Surakarta, Jawa Tengah</a
+            >
           </li>
           <li>
             <i class="fas fa-phone-alt"></i
@@ -244,14 +316,24 @@
           </li>
           <li>
             <i class="fas fa-envelope"></i
-            ><a class="ml-4 hover:text-blue-500" href="#">datacovid19@gmail.com</a>
+            ><a class="ml-4 hover:text-blue-500" href="#"
+              >datacovid19@gmail.com</a
+            >
           </li>
         </ul>
       </div>
     </footer>
     <!-- Main Footer End -->
 
-    <div class="my-footer grid grid-rows-3 md:grid-cols-3 grid-rows-none text-center">
+    <div
+      class="
+        my-footer
+        grid grid-rows-3
+        md:grid-cols-3
+        grid-rows-none
+        text-center
+      "
+    >
       <h4 class="mt-5 mb-5">
         API Covid-19 by
         <a
